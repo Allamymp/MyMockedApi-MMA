@@ -1,10 +1,8 @@
------
-
-Com certeza\! O texto que acabei de gerar para o README já está formatado em Markdown, pronto para você copiar e colar diretamente no seu arquivo `README.md` no GitHub.
+Com certeza! O texto que acabei de gerar para o README já está formatado em Markdown, pronto para você copiar e colar diretamente no seu arquivo `README.md` no GitHub.
 
 Aqui está ele novamente, no formato Markdown puro:
 
-````markdown
+
 # My Mocked API (MMA)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/seu-usuario/seu-repositorio?style=flat-square)
@@ -79,25 +77,22 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 ## 📂 Estrutura do Projeto
 
-````
-
 .
-├── backend/                  \# Código fonte do servidor Node.js (API de controle e servidor de mocks)
-│   ├── app.js                \# Ponto de entrada do servidor
-│   ├── routes/               \# Definição das rotas da API
-│   ├── utils/                \# Funções utilitárias (ex: gerenciamento de arquivos, logs)
-│   ├── requisitions_data/    \# Dados de mocks e templates persistidos
-│   ├── logs/                 \# Logs de requisições
-│   └── package.json          \# Dependências do backend
-├── frontend/                 \# Código fonte da aplicação Angular (interface de usuário)
-│   ├── src/                  \# Código fonte do Angular
-│   ├── dist/                 \# Diretório de build do Angular (gerado após `ng build`)
-│   └── package.json          \# Dependências do frontend
-├── start.bat                 \# Script de inicialização para Windows
-├── start.sh                  \# Script de inicialização para Linux/macOS
-└── README.md                 \# Este arquivo
+├── backend/                  # Código fonte do servidor Node.js (API de controle e servidor de mocks)
+│   ├── app.js                # Ponto de entrada do servidor
+│   ├── routes/               # Definição das rotas da API
+│   ├── utils/                # Funções utilitárias (ex: gerenciamento de arquivos, logs)
+│   ├── requisitions_data/    # Dados de mocks e templates persistidos
+│   ├── logs/                 # Logs de requisições
+│   └── package.json          # Dependências do backend
+├── frontend/                 # Código fonte da aplicação Angular (interface de usuário)
+│   ├── src/                  # Código fonte do Angular
+│   ├── dist/                 # Diretório de build do Angular (gerado após ng build)
+│   └── package.json          # Dependências do frontend
+├── start.bat                 # Script de inicialização para Windows
+├── start.sh                  # Script de inicialização para Linux/macOS
+└── README.md                 # Este arquivo
 
-````
 
 ---
 
@@ -115,5 +110,5 @@ Este projeto está licenciado sob a [MIT License](https://opensource.org/license
 
 ## Contato
 
-* [Seu Nome/GitHub Profile] - `@seu-usuario`
-* [Email de Contato] - seu.email@example.com
+* [Allamy Monteiro/GitHub Profile] - `@Allamymp`
+* [Email de Contato] - allamympereira@gmail.com
