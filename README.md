@@ -77,7 +77,8 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 ## 📂 Estrutura do Projeto
 
-.
+
+```
 ├── backend/                  # Código fonte do servidor Node.js (API de controle e servidor de mocks)
 │   ├── app.js                # Ponto de entrada do servidor
 │   ├── routes/               # Definição das rotas da API
@@ -87,12 +88,12 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 │   └── package.json          # Dependências do backend
 ├── frontend/                 # Código fonte da aplicação Angular (interface de usuário)
 │   ├── src/                  # Código fonte do Angular
-│   ├── dist/                 # Diretório de build do Angular (gerado após ng build)
+│   ├── dist/                 # Diretório de build do Angular (gerado após `ng build`)
 │   └── package.json          # Dependências do frontend
 ├── start.bat                 # Script de inicialização para Windows
 ├── start.sh                  # Script de inicialização para Linux/macOS
 └── README.md                 # Este arquivo
-
+```
 
 ---
 
