@@ -5,10 +5,6 @@ Aqui está ele novamente, no formato Markdown puro:
 
 # My Mocked API (MMA)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/seu-usuario/seu-repositorio?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/seu-usuario/seu-repositorio?style=flat-square)
-![GitHub repo size](https://img.shields.io/github/repo-size/seu-usuario/seu-repositorio?style=flat-square)
-
 ---
 
 ## 💻 Visão Geral
