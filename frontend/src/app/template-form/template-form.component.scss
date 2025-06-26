@@ -1,0 +1,15 @@
+/* src/app/template-form/template-form.component.scss */
+@use '@angular/material' as mat;
+
+
+.template-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 400px;
+  padding-top: 10px;
+}
+
+mat-dialog-actions {
+  padding-top: 20px;
+}

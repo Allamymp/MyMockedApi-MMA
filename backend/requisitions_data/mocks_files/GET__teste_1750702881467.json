@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "path": "/teste",
+  "responseStatus": 200,
+  "responseHeaders": {
+    "teste-header": "teste",
+    "Content-Type": "application/json"
+  },
+  "responseBody": {
+    "teste-body": "teste"
+  }
+}

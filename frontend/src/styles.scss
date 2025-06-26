@@ -1,0 +1,246 @@
+/* src/styles.scss */
+
+@use '@angular/material' as mat;
+@include mat.core(); // Mantenha este para as bases do Material
+
+// Definir paletas de cores 
+$my-app-primary: mat.m2-define-palette(mat.$m2-indigo-palette);  
+$my-app-accent: mat.m2-define-palette(mat.$m2-orange-palette, A200, A100, A400);  
+$my-app-warn: mat.m2-define-palette(mat.$m2-red-palette);  
+
+// Criar TEMA CLARO (MUDANÇA AQUI!)
+$my-app-theme: mat.m2-define-light-theme((  
+  color: (
+    primary: $my-app-primary,
+    accent: $my-app-accent,
+    warn: $my-app-warn,
+  ),
+  typography: mat.m2-define-typography-config(),
+  density: 0,
+));
+
+ 
+@include mat.all-component-themes($my-app-theme);
+
+// --- ESTILOS GLOBAIS E DE LAYOUT COM CORES DO TEMA ---
+// Estes estilos estarão aqui para serem aplicados globalmente
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: mat.m2-get-color-from-palette($my-app-primary, background, app-bar);  
+  color: mat.m2-get-color-from-palette($my-app-theme, text, primary);  
+
+/* Estilos globais para SnackBar */
+.success-snackbar {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
+
+.error-snackbar {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+/* Estilos de layout para as abas (seções gerais do App Component) */
+.tab-content {
+  padding: 20px;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.search-field {
+  flex-grow: 1;
+  max-width: 400px;
+
+  @media (max-width: 600px) {
+    max-width: none;
+  }
+}
+
+.date-picker-field {
+  min-width: 200px;
+}
+
+/* Estilos para listas */
+mat-list {
+  max-width: 800px;
+  margin-top: 20px;
+  border: 1px solid mat.m2-get-color-from-palette($my-app-primary, 200); 
+  border-radius: 4px;
+}
+
+mat-list-item {
+  border-bottom: 1px solid mat.m2-get-color-from-palette($my-app-primary, 100);  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+mat-list-item .mat-list-item-content {
+  display: flex;
+  align-items: center;
+}
+
+.mat-list-item-title {
+  font-weight: bold;
+  color: mat.m2-get-color-from-palette($my-app-theme, text, primary);
+}
+
+mat-icon[matListItemIcon] {
+  margin-right: 15px;
+  color: mat.m2-get-color-from-palette($my-app-primary, accent); 
+}
+
+button[mat-icon-button] {
+  margin-left: 8px;
+}
+
+/* Estilos para cards de detalhe */
+.template-detail-card, .mock-detail-card, .log-detail-card {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: mat.m2-get-color-from-palette($my-app-primary, background, card);  
+  border-left: 5px solid;  
+  border-radius: 4px;
+  pre {
+    background-color: mat.m2-get-color-from-palette($my-app-primary, background, dialog);  
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: mat.m2-get-color-from-palette($my-app-theme, text, primary);  
+  }
+}
+
+/* Cores de borda para os cards de detalhe (usando o tema) */
+.template-detail-card { border-left-color: mat.m2-get-color-from-palette($my-app-primary); }
+.mock-detail-card { border-left-color: mat.m2-get-color-from-palette($my-app-primary, accent); }
+.log-detail-card { border-left-color: mat.m2-get-color-from-palette($my-app-primary, warn); }
+
+
+/* Estilos para logs */
+.log-list .mat-list-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: auto !important;
+  align-items: flex-start !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+
+  &:hover {
+    background-color: mat.m2-get-color-from-palette($my-app-primary, 50);  
+  }
+
+  .mat-list-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 16px;
+  }
+}
+
+.log-entry {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.log-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: mat.m2-get-color-from-palette($my-app-theme, text, primary);  
+}
+
+.log-summary {
+  font-size: 0.8em;
+  color: mat.m2-get-color-from-palette($my-app-theme, text, secondary);  
+  margin-top: 4px;
+  width: 100%;
+  span {
+    margin-right: 8px;
+  }
+}
+
+.log-entry-detail-inline {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 16px;
+}
+
+/* Cores para status codes (mantidas como cores fixas, não dependem do tema) */
+.status-success { color: #4CAF50; }
+.status-redirect { color: #FFEB3B; }
+.status-client-error { color: #F44336; }
+.status-server-error { color: #FF9800; }
+
+/* Cores para tipo de log */
+.request-log .mat-list-item-title { color: mat.m2-get-color-from-palette($my-app-primary, accent); }
+.response-log .mat-list-item-title { color: mat.m2-get-color-from-palette($my-app-primary, primary); }
+
+
+/* Ajustes de form-field */
+mat-form-field.mat-focused .mat-form-field-label {
+  color: mat.m2-get-color-from-palette($my-app-primary, accent) !important;
+}
+
+.mat-form-field-outline-thick {
+  color: mat.m2-get-color-from-palette($my-app-primary, accent) !important;
+}
+
+input.mat-input-element, textarea.mat-input-element {
+  caret-color: mat.m2-get-color-from-palette($my-app-primary, accent);
+  color: mat.m2-get-color-from-palette($my-app-primary, text);  
+}
+
+.mat-select-value {
+  color: mat.m2-get-color-from-palette($my-app-primary, text);  
+}
+
+.mat-select-arrow {
+  color: mat.m2-get-color-from-palette($my-app-primary, text);  
+}
+
+.mat-option {
+  color: mat.m2-get-color-from-palette($my-app-primary, text);  
+}
+
+.mat-option.mat-selected:not(.mat-option-multiple) {
+  background: mat.m2-get-color-from-palette($my-app-primary, accent, 0.2);
+}
+
+.mat-form-field-wrapper {
+  background-color: mat.m2-get-color-from-palette($my-app-primary, 50);  
+  border-radius: 4px;
+}
+
+/* Correção para as abas do Material */
+.mat-tab-label {
+  color: mat.m2-get-color-from-palette($my-app-primary, text);  
+  opacity: 1 !important;
+}
+
+.mat-tab-label-active {
+  color: mat.m2-get-color-from-palette($my-app-primary, accent) !important;  
+}
+
+.mat-ink-bar {
+  background-color: mat.m2-get-color-from-palette($my-app-primary, accent) !important;  
+}

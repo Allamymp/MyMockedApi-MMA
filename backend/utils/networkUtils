@@ -1,0 +1,16 @@
+const os = require('os');
+
+// Função para obter o endereço IP da máquina
+function getLocalIp() {
+  const interfaces = os.networkInterfaces();
+  for (const iface of Object.values(interfaces)) {
+    for (const config of iface) {
+      if (config.family === 'IPv4' && !config.internal) {
+        return config.address;
+      }
+    }
+  }
+  return 'localhost'; // Fallback se não encontrar um IP
+}
+
+module.exports = { getLocalIp };

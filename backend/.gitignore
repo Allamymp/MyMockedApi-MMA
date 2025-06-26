@@ -1,0 +1,42 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+.DS_Store # macOS specific
+
+logs/requisitions_log/*
+!logs/requisitions_log/.gitkeep
+
+
+# Arquivos de IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp # Vim swap files
+
+# Arquivos de Sistema Operacional
+Thumbs.db 
+.DS_Store 
+npm-debug.log* 
+yarn-debug.log* 
+yarn-error.log* 
+
+*.js.map
+*.d.ts
+
+# Arquivos de testes
+/coverage
+/.nyc_output
+/test-results.xml
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Chaves SSH
+*.pem
+*.key

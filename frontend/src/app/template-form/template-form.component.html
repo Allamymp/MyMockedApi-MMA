@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Editar Template' : 'Adicionar Novo Template' }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="templateForm" class="template-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do Template</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="templateForm.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Status de Resposta</mat-label>
+      <input matInput type="number" formControlName="responseStatus">
+      <mat-error *ngIf="templateForm.get('responseStatus')?.hasError('required')">Status é obrigatório</mat-error>
+      <mat-error *ngIf="templateForm.get('responseStatus')?.hasError('min') || templateForm.get('responseStatus')?.hasError('max')">Status inválido (100-599)</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Content-Type</mat-label>
+      <mat-select formControlName="contentType">
+        <mat-option *ngFor="let type of contentTypes" [value]="type">
+          {{ type }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="templateForm.get('contentType')?.hasError('required')">Content-Type é obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Headers Adicionais (JSON)</mat-label>
+      <textarea matInput formControlName="responseHeaders" rows="5" placeholder="{ &quot;Cache-Control&quot;: &quot;no-cache&quot; }"></textarea>
+      <mat-hint>Opcional. Outros headers em formato JSON.</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Corpo da Resposta</mat-label>
+      <textarea matInput formControlName="responseBody" rows="10" placeholder='{"message": "Hello"}'></textarea>
+      <mat-error *ngIf="templateForm.get('responseBody')?.hasError('required')">Corpo é obrigatório</mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="save()" [disabled]="!templateForm.valid">Salvar</button>
+</mat-dialog-actions>
